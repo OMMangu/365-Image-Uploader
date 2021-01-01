@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: test
+  application:
+    name: 365-Image-Uploader
+logging:
+  level:
+    org.springframework.web: DEBUG
+gcp:
+  project: image-365
+  bucket: image-365-bucket

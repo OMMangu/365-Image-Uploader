@@ -1,0 +1,40 @@
+ext {
+    versions = [
+            gcpstorage : '1.113.6',
+            junit : '5.7.0',
+            sboot: '2.4.1',
+            reactortest: '3.4.1',
+            apache: '3.11'
+    ]
+
+    gcplibraries = [
+            storage: "com.google.cloud:google-cloud-storage:$versions.gcpstorage"
+    ]
+    junit = [
+            jjupiter: "org.junit.jupiter:junit-jupiter-api:$versions.junit",
+            vintage: "org.junit.vintage:junit-vintage-engine:$versions.junit"
+    ]
+    sboot = [
+            starterweb: "org.springframework.boot:spring-boot-starter-web:$versions.sboot"
+    ]
+    sbootTestImplementation = [
+            startertest: "org.springframework.boot:spring-boot-starter-test:$versions.sboot"
+    ]
+    sbootDevTools = [
+            devtools: "org.springframework.boot:spring-boot-devtools:$versions.sboot"
+    ]
+    reactorTest = [
+            reactortest: "io.projectreactor:reactor-test:$versions.reactortest"
+    ]
+    apache = [
+            lang : "org.apache.commons:commons-lang3:$versions.apache"
+    ]
+    gcpLibsCompile = gcplibraries.values()
+    junitTImplementation = junit.values()
+    sbootImplementation = sboot.values()
+    sbootTImplementation = sbootTestImplementation.values()
+    reactortTImplementation = reactorTest.values()
+    sbootDevOnly = sbootDevTools.values()
+    apacheCompile = apache.values()
+    testImplementationLibs = junitTImplementation + reactortTImplementation
+}

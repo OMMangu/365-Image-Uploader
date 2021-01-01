@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: 365-Image-Uploader
+server:
+  port: 8080
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.hibernate: ERROR
+gcp:
+  project: image-365
+  bucket: image-365-bucket
